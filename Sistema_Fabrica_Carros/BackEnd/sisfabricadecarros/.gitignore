@@ -31,7 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Não Ignorar a Pasta csv ###
-!src/main/resources/csv/
-!src/main/resources/csv/**
