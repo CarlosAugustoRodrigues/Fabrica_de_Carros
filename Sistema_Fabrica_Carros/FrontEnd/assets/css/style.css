@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+:root {
+    --white: rgb(255, 255, 255);
+    --purple: rgb(120, 20, 255);
+    --blue: rgb(0, 0, 255);
+    --black: rgb(0, 0, 0);
+    --gray: rgb(112, 112, 112);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-principal {
+    position: relative;
+    width: 50%;
+    height: 80%;
+}
+
+.area {
+    cursor: pointer;
+    position: absolute;
+
+    border: 2px solid var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area:hover {
+    background: var(--purple);
+}
+
+.area-um {
+    bottom: 9%;
+    left: 2%;
+    height: 31%;
+    width: 22%;
+
+    z-index: 94;
+}
+
+.area-dois {
+    bottom: 12%;
+    left: 30%;
+    height: 15%;
+    width: 8%;
+
+    z-index: 93;
+}
+
+.area-tres {
+    bottom: -10%;
+    left: 10%;
+    height: 40%;
+    width: 30%;
+
+    z-index: 92;
+}
+
+.area-quatro {
+    bottom: 28%;
+    left: 15.2%;
+    height: 15%;
+    width: 17%;
+
+    z-index: 95;
+}
+
+.area-cinco {
+    bottom: -10%;
+    right: 30%;
+    height: 50%;
+    width: 60%;
+    z-index: 91;
+}
+.area-cinco > span {
+    position: absolute;
+    right: 25%;
+}
+
+.area-seis {
+    top: 0;
+    right: 0;
+    height: 8%;
+    width: 20%;
+    z-index: 90;
+}
+
+.area-sete {
+    bottom: 39.7%;
+    left: 32%;
+    height: 10%;
+    width: 15%;
+
+    z-index: 96;
+}
+
+.area-oito {
+    top: 25%;
+    left: 15%;
+    height: 9%;
+    width: 15%;
+
+    z-index: 98;
+}
+
+.area-nove {
+    top: 24%;
+    left: 29%;
+    height: 12%;
+    width: 15%;
+
+    z-index: 99;
+}
+
+.area-dez {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40%;
+    z-index: 89;
+}
+
+.area-onze {
+    top: 10%;
+    left: 27%;
+    height: 13%;
+    width: 8%;
+
+    z-index: 97;
+}
+
+.area-blue {
+    background: var(--blue);
+}
+
+.area-gray {
+    background: var(--gray);
+}

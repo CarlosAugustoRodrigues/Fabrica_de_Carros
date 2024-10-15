@@ -16,15 +16,17 @@ import lombok.NoArgsConstructor;
 public class Alocacao {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long quantidade;
     private Long area;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false)
     private Automovel automovel;
-    @OneToOne(fetch = FetchType.EAGER)
-    private Cliente cliente;
-    @OneToOne(fetch = FetchType.EAGER)
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false)
     private Concessionaria concessionaria;
+
+    private Long quantidade;
+
 }

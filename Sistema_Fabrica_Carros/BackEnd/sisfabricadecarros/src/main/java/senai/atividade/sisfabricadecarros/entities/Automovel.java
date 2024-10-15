@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 public class Automovel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String modelo;
     private Float preco;
