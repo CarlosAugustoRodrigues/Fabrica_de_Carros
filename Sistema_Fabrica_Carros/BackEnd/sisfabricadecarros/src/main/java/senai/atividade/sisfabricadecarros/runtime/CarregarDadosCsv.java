@@ -28,16 +28,16 @@ public class CarregarDadosCsv implements CommandLineRunner {
     }
 
     private String clientes =
-            "C:/Users/Guto/Documents/Carlos/Fabrica_de_Carros/Sistema_Fabrica_Carros/BackEnd/sisfabricadecarros/src/main/resources/csv/clientes.csv";
+            "src/main/resources/csv/clientes.csv";
 
     private String concessionarias =
-            "C:/Users/Guto/Documents/Carlos/Fabrica_de_Carros/Sistema_Fabrica_Carros/BackEnd/sisfabricadecarros/src/main/resources/csv/concessionarias.csv";
+            "src/main/resources/csv/concessionarias.csv";
 
     private String automovel =
-            "C:/Users/Guto/Documents/Carlos/Fabrica_de_Carros/Sistema_Fabrica_Carros/BackEnd/sisfabricadecarros/src/main/resources/csv/automoveis.csv";
+            "src/main/resources/csv/automoveis.csv";
 
     private String alocacao =
-            "C:/Users/Guto/Documents/Carlos/Fabrica_de_Carros/Sistema_Fabrica_Carros/BackEnd/sisfabricadecarros/src/main/resources/csv/alocacao.csv";
+            "src/main/resources/csv/alocacao.csv";
 
     @Override
     public void run(String... args) throws Exception {

@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+    text-decoration: none;
+}
+
+:root {
+    --white: rgb(255, 255, 255);
+    --purple: rgb(120, 20, 255);
+    --blue: rgb(0, 0, 255);
+    --black: rgb(0, 0, 0);
+    --gray: rgb(112, 112, 112);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-inline: 10%;
+
+    background: var(--white);
+}
+
+header button {
+    width: 150px;
+    height: 50px;
+
+    border: none;
+    border-radius: 8px;
+    background: var(--purple);
+
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+header button a {
+    color: var(--white);
+    font-weight: bolder;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 3rem;
+    width: 80%;
+    height: 90vh;
+
+    padding-block: 3%;
+
+    background: var(--white);
+}
+
+main h2 {
+    font-size: 2.2rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+main h2 span {
+    color: var(--purple);
+}
+
+.div-cards-automoveis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    gap: .5rem;
+    width: 81.45%;
+    height: auto;
+}
+
+.card-automovel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 200px;
+
+    padding: 20px;
+
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+
+    background: var(--white);
+}
+
+.div-automovel {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.div-automovel p {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.div-automovel p span {
+    font-weight: 500;
+    color: var(--purple);
+}
+
+.btn-vender {
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+
+    background: var(--purple);
+
+    border: none;
+    border-radius: 8px;
+
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.btn-vender:hover {
+    background: var(--black);
+}
