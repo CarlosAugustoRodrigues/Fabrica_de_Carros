@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 public interface AlocacaoRepository extends JpaRepository<Alocacao, Long> {
-    @Query("SELECT al FROM Alocacao al WHERE area = :id")
+    @Query("SELECT al FROM Alocacao al WHERE area = :id AND quantidade > 0")
     List<Alocacao> findByArea(@Param("id") Long id);
 
     @Query("SELECT al FROM Alocacao al WHERE area = :id AND automovel = :automovel")
