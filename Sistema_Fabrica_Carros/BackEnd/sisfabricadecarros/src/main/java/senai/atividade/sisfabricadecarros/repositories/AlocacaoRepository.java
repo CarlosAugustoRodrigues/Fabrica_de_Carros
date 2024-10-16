@@ -8,9 +8,13 @@ import senai.atividade.sisfabricadecarros.entities.Alocacao;
 import senai.atividade.sisfabricadecarros.entities.Automovel;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface AlocacaoRepository extends JpaRepository<Alocacao, Long> {
-    @Query("SELECT automovel a FROM Alocacao al WHERE area = :id")
-    List<Automovel> findByArea(@Param("id") Long id);
+    @Query("SELECT al FROM Alocacao al WHERE area = :id")
+    List<Alocacao> findByArea(@Param("id") Long id);
+
+    @Query("SELECT al FROM Alocacao al WHERE area = :id AND automovel = :automovel")
+    Alocacao findByAreaAutomovel(@Param("id") Long id, @Param("automovel") Automovel automovel);
 }

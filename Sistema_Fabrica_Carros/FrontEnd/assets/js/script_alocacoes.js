@@ -1,44 +1,44 @@
 const PORT = 8080;
 const URI = `http://localhost:${PORT}/alocacao`;
 const areas = document.querySelectorAll(".area");
-var listaAutomoveis = [];
+var listaAlocacoes = [];
 
 areas.forEach((e) => {
     e.addEventListener("click", async () => {
         listaAutomoveis = [];
         const idArea = e.getAttribute("data-area");
-        
+
         try {
             const response = await fetch(`${URI}/${idArea}`);
             const data = await response.json();
 
-            data.forEach((veiculo) => {
-                listaAutomoveis.push(veiculo);
+            data.forEach((alocacao) => {
+                listaAlocacoes.push(alocacao);
             });
 
-            window.localStorage.setItem('veiculos', JSON.stringify(listaAutomoveis));
+            window.localStorage.setItem('alocacoes', JSON.stringify(listaAlocacoes));
             window.localStorage.setItem('area', idArea);
-        
+
             window.location.href = "http://127.0.0.1:5500/assets/pages/informacoes.html";
 
-        } catch(error) {
-            console.log("Erro ao buscar automoveis da area!" ,error);
+        } catch (error) {
+            console.log("Erro ao buscar automoveis da area!", error);
         }
     });
 });
 
 function verificarCarrosNaArea() {
-    areas.forEach( async (e) => {
+    areas.forEach(async (e) => {
         let listaQuantidadeCarros = [];
         let idArea = e.getAttribute("data-area");
 
         try {
 
             const response = await fetch(`${URI}/${idArea}`);
-            const veiculos = await response.json();
+            const data = await response.json();
 
-            veiculos.forEach((veiculo) => {
-                listaQuantidadeCarros.push(veiculo);
+            data.forEach((alocacao) => {
+                listaQuantidadeCarros.push(alocacao);
             });
 
             if (listaQuantidadeCarros.length > 0) {
@@ -50,7 +50,7 @@ function verificarCarrosNaArea() {
 
             listaQuantidadeCarros = [];
         } catch (error) {
-            console.log("Erro ao buscar automoveis da area!" ,error);
+            console.log("Erro ao buscar automoveis da area!", error);
 
         }
     });

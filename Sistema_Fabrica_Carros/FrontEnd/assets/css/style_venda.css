@@ -58,7 +58,7 @@ header a {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 
     gap: 3rem;
@@ -70,79 +70,53 @@ main {
     background: var(--white);
 }
 
-main h2 {
-    font-size: 2.2rem;
+.card-venda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 40%;
+    height: 40%;
+
+    padding: 1rem;
+
+    background: var(--white);
+    border-radius: 8px;
+    border: 2px solid var(--purple);
+}
+
+.info-automovel {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
     color: var(--black);
     text-transform: uppercase;
 }
 
-main h2 span {
-    color: var(--purple);
-}
-
-.div-cards-automoveis {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-
-    gap: .5rem;
-    width: 81.45%;
-    height: auto;
-}
-
-.div-cards-automoveis h1 {
+select {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid var(--black);
     text-transform: uppercase;
-    color: var(--purple);
+
+    outline: none;
 }
 
-.card-automovel {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 300px;
-    height: 200px;
-
-    padding: 20px;
-
-    border: 2px solid var(--gray);
-    border-radius: 8px;
-
-    background: var(--white);
-    text-transform: uppercase;
-}
-
-.div-automovel {
-    display: flex;
-    flex-direction: column;
-
-    gap: .3rem;
-}
-
-.div-automovel p {
-    font-size: 1.1rem;
-    font-weight: bolder;
-}
-
-.div-automovel p span {
-    font-weight: 500;
-    color: var(--purple);
-}
-
-.btn-vender {
+.card-venda button {
     cursor: pointer;
     width: 100%;
-    height: 50px;
-
+    height: 40px;
+    text-transform: uppercase;
     background: var(--purple);
 
     border: none;
     border-radius: 8px;
-
     color: var(--white);
-    text-transform: uppercase;
-    font-size: 1.2rem;
     font-weight: bolder;
 }
-.btn-vender:hover {
+
+.card-venda button:hover {
     background: var(--black);
 }

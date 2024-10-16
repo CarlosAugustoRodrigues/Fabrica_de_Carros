@@ -27,12 +27,12 @@ public class AlocacaoControllers {
     }
 
     @GetMapping("/{area}")
-    public ResponseEntity<List<Automovel>> readByArea(
+    public ResponseEntity<List<Alocacao>> readByArea(
             @PathVariable(value = "area") Long id
     ) {
-        List<Automovel> listaAutomoveis = alocacaoRepository.findByArea(id);
+        List<Alocacao> listaAlocacoes = alocacaoRepository.findByArea(id);
 
-        return ResponseEntity.ok(listaAutomoveis);
+        return ResponseEntity.ok(listaAlocacoes);
     }
 
     @GetMapping
@@ -40,6 +40,34 @@ public class AlocacaoControllers {
         List<Alocacao> listaAlocacoes = alocacaoRepository.findAll();
 
         return ResponseEntity.ok(listaAlocacoes);
+    }
+
+    @PutMapping("/{area}/{automovel}")
+    public ResponseEntity<?> updateQuantidade(
+            @PathVariable(value = "area") Long area,
+            @PathVariable(value = "automovel") Long automovel
+    ) {
+        var automovel0 = automovelRepository.findById(automovel);
+        var alocacao0 = alocacaoRepository.findByAreaAutomovel(area, automovel0.get());
+
+        if (alocacao0.getQuantidade() == 1) {
+            deleteAlocacao(area, automovel);
+            return ResponseEntity.ok("Alocação excluída com sucesso!");
+        }
+
+        alocacao0.setQuantidade(alocacao0.getQuantidade() - 1);
+        alocacaoRepository.save(alocacao0);
+
+        return ResponseEntity.status(HttpStatus.OK).body(alocacao0);
+    }
+
+    public ResponseEntity<?> deleteAlocacao(Long area, Long automovel) {
+        var automovel0 = automovelRepository.findById(automovel);
+        var alocacao0 = alocacaoRepository.findByAreaAutomovel(area, automovel0.get());
+
+        alocacaoRepository.deleteById(alocacao0.getId());
+
+        return ResponseEntity.ok("Alocação excluída com sucesso!");
     }
 
 }
