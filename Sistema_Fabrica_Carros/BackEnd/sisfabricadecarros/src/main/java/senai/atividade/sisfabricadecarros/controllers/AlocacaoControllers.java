@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import senai.atividade.sisfabricadecarros.entities.Alocacao;
 import senai.atividade.sisfabricadecarros.entities.Automovel;
+import senai.atividade.sisfabricadecarros.entities.Concessionaria;
 import senai.atividade.sisfabricadecarros.repositories.AlocacaoRepository;
 import senai.atividade.sisfabricadecarros.repositories.AutomovelRepository;
 
@@ -40,6 +41,20 @@ public class AlocacaoControllers {
         List<Alocacao> listaAlocacoes = alocacaoRepository.findAll();
 
         return ResponseEntity.ok(listaAlocacoes);
+    }
+
+    @GetMapping("/{area}/{automovel}")
+    public ResponseEntity<List<Concessionaria>> readConcessionaria(
+            @PathVariable(value = "area") Long area,
+            @PathVariable(value = "automovel") Long automovel
+    ) {
+
+        var automovel0 = automovelRepository.findById(automovel);
+        String modelo = automovel0.get().getModelo();
+        List<Concessionaria> listaConcessionaria = alocacaoRepository
+                .findConcessionaria(area, modelo);
+
+        return ResponseEntity.ok(listaConcessionaria);
     }
 
     @PutMapping("/{area}/{automovel}")

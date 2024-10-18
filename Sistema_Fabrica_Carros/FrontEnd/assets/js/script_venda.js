@@ -44,8 +44,7 @@ async function fetchClientes() {
 
 async function fetchConcessionarias() {
     try {
-
-        const response = await fetch(`${URI}/concessionaria`);
+        const response = await fetch(`${URI}/alocacao/${area}/${automovel.id}`);
         const concessionarias = await response.json();
 
         await concessionarias.forEach((concessionaria) => {
@@ -90,10 +89,6 @@ async function vender() {
     } catch(error) {
         console.log("Erro ao vender automovel!")
     }
-}
-
-function limparLocalStorage() {
-    window.localStorage.clear();
 }
 
 document.addEventListener("DOMContentLoaded", async (e) => {
